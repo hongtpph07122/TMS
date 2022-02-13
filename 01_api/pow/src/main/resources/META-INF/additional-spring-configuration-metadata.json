@@ -1,0 +1,33 @@
+{
+  "properties": [
+    {
+      "name": "config.appointment-date.enable",
+      "type": "java.lang.Boolean",
+      "description": "Description for config.appointment-date.enable."
+    },
+    {
+      "name": "config.appointment-date.mod-limit",
+      "type": "java.lang.String",
+      "description": "Description for config.appointment-date.mod-limit."
+    },
+    {
+      "name": "config.appointment-date.folio-limit",
+      "type": "java.lang.Integer",
+      "description": "Description for config.appointment-date.folio-limit."
+    },
+    {
+      "name": "config.wsc-pbx.enable",
+      "type": "java.lang.Boolean",
+      "description": "Description for config.wsc-pbx.enable."
+    },
+    {
+      "name": "config.wsc-pbx.url",
+      "type": "java.lang.String",
+      "description": "Description for config.wsc-pbx.url."
+    },
+    {
+      "name": "config.wsc-pbx.buffer-size",
+      "type": "java.lang.Integer",
+      "description": "Description for config.wsc-pbx.buffer-size."
+    }
+  ] }

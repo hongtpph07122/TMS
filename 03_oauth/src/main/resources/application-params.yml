@@ -1,0 +1,13 @@
+tms:
+  invoke-mechanism-system-change-password:
+    enable: false
+    enable-deep-expire-password: true
+    no-days-expired: 30
+    cron:
+      expression_1: "0 0 1 ? * MON-SAT" # Every day at 1am on MON-SAT
+      expression_2: "0 */1 * ? * *"
+  oauth2-server:
+    revoke:
+      allow-call-api: true
+
+

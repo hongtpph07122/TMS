@@ -1,0 +1,63 @@
+{
+  "properties": [
+    {
+      "name": "config.campaign-types.activation-value",
+      "type": "java.lang.Boolean",
+      "description": "Description for config.campaign-types.activation-value."
+    },
+    {
+      "name": "config.campaign-category.activation-value",
+      "type": "java.lang.Boolean",
+      "description": "Description for config.campaign-category.activation-value."
+    },
+    {
+      "name": "config.campaign-tags.activation-value",
+      "type": "java.lang.Boolean",
+      "description": "Description for config.campaign-tags.activation-value."
+    },
+    {
+      "name": "config.user-expiretime",
+      "type": "java.lang.Integer",
+      "description": "Description for config.user-expiretime."
+    },
+    {
+      "name": "config.buffer-lead-limit",
+      "type": "java.lang.Integer",
+      "description": "Description for config.buffer-lead-limit."
+    },
+    {
+      "name": "config.check-connection",
+      "type": "java.lang.Boolean",
+      "description": "Description for config.check-connection."
+    },
+    {
+      "name": "config.appointment-date.enable",
+      "type": "java.lang.Boolean",
+      "description": "Description for config.appointment-date.enable."
+    },
+    {
+      "name": "config.appointment-date.mod-limit",
+      "type": "java.lang.String",
+      "description": "Description for config.appointment-date.mod-limit."
+    },
+    {
+      "name": "config.appointment-date.folio-limit",
+      "type": "java.lang.Integer",
+      "description": "Description for config.appointment-date.folio-limit."
+    },
+    {
+      "name": "config.wsc-pbx.enable",
+      "type": "java.lang.Boolean",
+      "description": "Description for config.wsc-pbx.enable."
+    },
+    {
+      "name": "config.wsc-pbx.url",
+      "type": "java.lang.String",
+      "description": "Description for config.wsc-pbx.url."
+    },
+    {
+      "name": "config.wsc-pbx.buffer-size",
+      "type": "java.lang.Integer",
+      "description": "Description for config.wsc-pbx.buffer-size."
+    }
+  ] }

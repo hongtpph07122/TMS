@@ -1,0 +1,194 @@
+.textColorGreen {
+  color: #35aa47;
+}
+.textColorOrage {
+  color: #e67000;
+}
+.textColorRed {
+  color: #f82100;
+}
+
+.fontBold {
+  font-weight: bold;
+}
+
+.borderColorGreen {
+  border-color: #35aa47;
+}
+
+.marginBottom5px {
+  margin-bottom: 5px;
+}
+.marginBottom15px {
+  margin-bottom: 15px;
+}
+
+.marginBottom20px {
+  margin-bottom: 20px;
+}
+.marginBottom25px {
+  margin-bottom: 25px;
+}
+/*form*/
+label.fontBold {
+  font-weight: bold;
+}
+
+tr.row-item-active {
+  background-color: #6a9dd7 !important;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cloneRow {
+  display: none;
+}
+
+#addAgent {
+  background: #e5efff;
+  border-radius: 4px;
+  color: #367bf5;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.75px;
+}
+.btnInline{
+    margin: 0px 3px;
+    padding: 3px 6px;
+}
+.btnInlineSave {
+  background: #ffffff;
+  border: 1px solid #4caf50;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #4caf50;
+}
+.btnInlineCancelAdd,
+.btnInlineCancel {
+  color: #f7685b;
+  background: #ffffff;
+  border: 1px solid #f7685b;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.btn-bhs {
+  margin: 0;
+  background: #f0f2f5;
+  border-left: 1px solid #e3e4e5;
+  border-right: 1px solid #e3e4e5;
+  font-weight: 700 !important;
+  font-size: 14px;
+  line-height: 22px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  width: 200px;
+}
+textarea {
+  resize: none;
+}
+.breadcrumb {
+  background: #f0f2f5 !important;
+}
+.btnApproved {
+  color: #4caf50;
+}
+.btnUncalled {
+  color: #9c27b0;
+}
+.btnRejected {
+  color: #f44336;
+}
+.btnTrash {
+  color: #1f1f20;
+}
+.btnCallback {
+  background: #ffffff;
+  /* Shadow Dark · 2dp */
+
+  box-shadow: 0px 1px 2px rgba(8, 35, 48, 0.24),
+    0px 2px 6px rgba(8, 35, 48, 0.16);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.75px;
+
+  /* Blue Base */
+
+  color: #367bf5;
+}
+.btnSave {
+  background: #367bf5;
+  /* Shadow Blue · 4dp */
+  margin-left: 10px;
+  box-shadow: 0px 2px 4px rgba(54, 123, 245, 0.24),
+    0px 4px 8px rgba(54, 123, 245, 0.16);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 14px;
+
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.75px;
+
+  /* White Base */
+
+  color: #ffffff;
+}
+
+.btnSave:focus {
+  color: #ffffff;
+  outline: none;
+}
+.btnCanel {
+  border: 1px solid #f7685b !important;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #f7685b;
+  background: #ffffff;
+}
+
+.tableLstGroup tbody td a {
+  display: block;
+}
+.search-link-page{
+  background: #FFFFFF !important;
+  border: 1px solid #dcdcdc;
+  line-height: 30px;
+  border-radius: 4px;
+  float: left;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 0px 10px;
+  text-decoration: none;
+  vertical-align: top;
+  color: #919699;
+}
+.main-container .search-link-page .keyword-input{
+  margin: 0px;
+  border: none;
+  color: #919699;
+  font-size: 16px;
+  line-height: 24px;
+  width: 96%;
+  font-weight: normal;
+  padding: 0;
+  height: 28px;
+}
+.search-link .keyword-input-page, .searchWorkflows{
+  height: 34px;
+}
+.connectedSortable{
+  position: absolute;
+  z-index: 99;
+  overflow-y: overlay;
+  font-size: 16px;
+  line-height: 24px;
+  align-items: center;
+  letter-spacing: 0.44px;
+  height: 150px;
+  border: 1px solid #E3E5E6;
+}

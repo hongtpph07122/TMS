@@ -1,0 +1,77 @@
+.textColorGreen{
+    color:#35aa47;
+}
+.textColorOrage{
+    color:#e67000;
+}
+.textColorRed{
+    color:#f82100;
+}
+
+.fontBold{
+    font-weight: bold;
+}
+
+.borderColorGreen{
+    border-color:#35aa47;
+}
+
+.marginBottom5px{
+    margin-bottom: 5px;
+}
+.marginBottom15px{
+    margin-bottom: 15px;
+}
+
+.marginBottom20px{
+    margin-bottom: 20px;
+}
+.marginBottom25px{
+    margin-bottom: 25px;
+}
+/*form*/
+label.fontBold{
+    font-weight: bold;
+}
+
+
+/*button export*/
+.btnExportExcel a{
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: all .3s;
+}
+.btnExportExcel a i{
+    font-size: 30px;
+    display: block;
+}
+.btnExportExcel a:hover{
+    color:#35aa47;
+}
+#tblMailList0 th .input-group{
+    float: none;
+    min-width: 50px;
+}
+
+thead .bhs-filter th:nth-child(2),
+thead tr th:nth-child(2){
+    /*display: none;*/
+}
+td a{
+    color: #367BF5 !important;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.dataTables_scroll{
+    width: 120%;
+}
+table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
+    max-width: 500px;
+    min-width: 70px;
+    white-space: nowrap; 
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

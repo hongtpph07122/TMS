@@ -1,0 +1,68 @@
+.textColorGreen{
+    color:#35aa47;
+}
+.textColorOrage{
+    color:#e67000;
+}
+.textColorRed{
+    color:#f82100;
+}
+
+.fontBold{
+    font-weight: bold;
+}
+
+.borderColorGreen{
+    border-color:#35aa47;
+}
+
+.marginBottom5px{
+    margin-bottom: 5px;
+}
+.marginBottom15px{
+    margin-bottom: 15px;
+}
+
+.marginBottom20px{
+    margin-bottom: 20px;
+}
+.marginBottom25px{
+    margin-bottom: 25px;
+}
+/*form*/
+label.fontBold{
+    font-weight: bold;
+}
+
+
+/*button export*/
+.btnExportExcel a{
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: all .3s;
+}
+.btnExportExcel a i{
+    font-size: 30px;
+    display: block;
+}
+.btnExportExcel a:hover{
+    color:#35aa47;
+}
+#tblMailList0 th .input-group{
+    float: none;
+    min-width: 50px;
+}
+.inputElement{
+    padding:0 10px;
+}
+#btnFindCdrs{
+    background: #367BF5;
+    box-shadow: 0px 2px 4px rgba(54, 123, 245, 0.24), 0px 4px 8px rgba(54, 123, 245, 0.16);
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.75px;
+    border-color: rgba(255,255,255,.2);
+}

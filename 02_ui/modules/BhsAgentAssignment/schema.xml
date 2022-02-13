@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_bhsagentassignment</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsagentassignment` (
+              `bhsagentassignmentid` int(19) NOT NULL,
+              `bhsagentassignment_name` varchar(50) NOT NULL,
+              PRIMARY KEY  (`bhsagentassignmentid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_bhsagentassignmentcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsagentassignmentcf` (
+                  `bhsagentassignmentid` int(11) NOT NULL,
+                  PRIMARY KEY  (`bhsagentassignmentid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

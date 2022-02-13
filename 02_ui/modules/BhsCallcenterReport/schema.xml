@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_bhscallcenterreport</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhscallcenterreport` (
+              `bhscallcenterreportid` int(19) NOT NULL,
+              `bhscallcenterreport_name` varchar(50) NOT NULL,
+              PRIMARY KEY  (`bhscallcenterreportid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_bhscallcenterreportcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhscallcenterreportcf` (
+                  `bhscallcenterreportid` int(11) NOT NULL,
+                  PRIMARY KEY  (`bhscallcenterreportid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

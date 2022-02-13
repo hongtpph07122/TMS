@@ -1,0 +1,150 @@
+server:
+  port: 8083
+  servlet:
+    contextPath: /api/v1
+spring:
+  datasource:
+    initialization-mode: never
+  flyway:
+    enabled: false
+  profiles:
+    active: dev
+  jpa:
+    open-in-view: false
+    database: POSTGRESQL
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: none
+  rabbitmq:
+    host: 127.0.0.1
+    username: tms_admin
+    password: tms_admin
+    port: 5672
+
+logging:
+  level:
+    com.zaxxer.hikari: info
+    com.tms.utils.AppUtils: error
+    org.hibernate.SQL: info
+app:
+  datasource:
+    #    url: "jdbc:postgresql://222.252.25.238:9001/tms?ApplicationName=TMS"
+    url: "jdbc:postgresql://27.71.226.237:9106/tms?ApplicationName=TMS"
+    #    url: "jdbc:postgresql://27.71.226.237:25432/tms?ApplicationName=TMS"
+    #    url: "jdbc:postgresql://10.10.10.21:5432/tms?ApplicationName=TMS-test"
+    username: "tms_admin"
+    #    password: "tms_admin"
+    password: "123456"
+    hikari-config:
+      pool-name: app-pool
+      maximum-pool-size: 30
+      minimum-idle: 5
+oauth:
+    check-token-url: "http://27.71.226.237:9105/oauth/check_token"
+  #  check-token-url: "http://27.71.226.237:9105/oauth/check_token"
+  #  check-token-url: "http://183.91.11.164:8082/oauth/check_token"
+  #  check-token-url: "http://10.10.10.21:9082/oauth/check_token"
+ws:
+  default-uri: "http://10.9.120.34/TelPublish/WebService1.asmx"
+  timeout: 2000
+  make-phone:
+    end-point: "http://10.9.120.34/TelPublish/WebService1.asmx"
+    action: "http://tempuri.org/MakeCall"
+  release-call:
+    end-point: "http://10.9.120.34/TelPublish/WebService1.asmx"
+    action: "http://tempuri.org/ReleaseCall"
+  ext: "1204"
+pbx:
+  url: "http://27.71.226.237:8080/pbx-rest"
+  channelId: "SIP/1000-00006fe3"
+config:
+  queue-agent: agentcy_test
+  run-rate: false
+  run-basket: true
+  run-get-token-ninjaVan: false 
+  run-close-lead: true
+  month-start-run-close: 2
+  day-after-run-close: 4
+  run-close-callback-lead: true
+  close-callback-params: 4,4,4,15
+  orgId-close-callback: 4
+  orgId-close: 4
+  basket-time: 60000
+  run-writelogdb: true
+  redis-server: 127.0.0.1
+  redis-master-key: master
+  user-expiretime: 5
+  run-expired-password: true
+  day-expired-password: 30
+  cdr-websocket: ws://27.71.226.237:8080/cdr-log
+  cdr-listen: false
+  cdr-autoloadduration: false
+  write-log-call-id: false
+  agency-id-hold: ;18;19;22;23;29;
+  country: VN
+  org-id: 4
+  ghn-order: false
+  caching-group-agent: false
+  email-reset-pass: "/Users/danguyen/Downloads/yahoo.html"
+  smart-load-sharing-mode: load_balancing
+  auto-rescue: false
+  auto-rescue-cron: 0 0 8,14 * * ?
+  flash-notification: false
+  rescue-auto-time: 3600000
+  auto-load-data: false
+  auto-load-data-other: false
+  auto-load-data-beauty: false
+  day-reload: 14,7
+  run-delivery-postback-job: false
+  agency-id-need-to-delivery-postback: 58;
+  delivery-postback-job-time: 10000
+  ip-local-geo: 10.10.10.10
+  url-read-duration: http://27.71.226.238:8585/playback/duration
+  auto-create-do: true
+  stop-campaign: true
+  is-reload-global-param: false
+  is-run-subname-aff: true
+  campaign-types:
+    activation-value: true
+  campaign-category:
+    activation-value: true
+  campaign-tags:
+    activation-value: true
+  buffer-lead-limit: 50
+  check-connection: false
+  team-config:
+    is-auto-reload: true
+    time-auto-reload: 3600000
+  appointment-date:
+    enable: true
+    mod-limit: weeks
+    folio-limit: 2
+  wsc-pbx:
+    enable: true
+    url: ws://27.71.226.237:9999/events
+    buffer-size: 20971520
+  kafka:
+    consumer:
+      bootstrap-servers: dbzui-kafka:36667
+      group-id: tms_api
+      topic: pbx-events
+      auto-startup: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    security-protocol: security-protocol
+    sasl:
+      mechanism: mechanism
+      jaas-config: jaas-config
+    auto-offset-reset: latest
+    max-poll-record: 5
+    phone-prefix: 6064
+  check-valid-phone-number: false
+inmemory:
+  datasource:
+    jdbcUrl: "jdbc:sqlite::memory:"
+    username: "sa"
+    password: "sa"
+    pool-name: memory-pool
+    maximum-pool-size: 30
+    minimum-idle: 5
+

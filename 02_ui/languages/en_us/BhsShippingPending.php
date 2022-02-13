@@ -1,0 +1,43 @@
+<?php
+
+$languageStrings = array(
+    'BhsShippingPending' => 'Shipping Pending',
+    'LBL_BhsShippingPending' => 'Shipping Pending',
+    'SINGLE_BhsShippingPending' => 'Shipping Pending',
+    'LBL_BHSSHIPPINGPENDING_DETAILS' => 'Shipping Pending details',
+    'LBL_PRODUCT' => 'Product',
+    'LBL_TOTALPRICE' => 'Total price',
+    'LBL_MAKETINGGATE' => 'Marketing Gate',
+    'LBL_SOID' => 'Order ID',
+    'LBL_EXPORTTOEXCEL' => 'Export to Excel',
+    'LBL_OPTION' => 'Option',
+    'LBL_ADDRESS' => 'Address',
+    'LBL_STATUS' => 'Status',
+    'LBL_SOUPDATEDATE' => 'Update Date ',
+    'LBL_ERRORMESSAGE' => 'Result',
+    'LBL_ASSIGN' => 'Assign',
+    'LBL_CUSTOMERPHONE' => 'Phone',
+    'LBL_CREATEDATE' => 'Created Time',
+    'LBL_CUSTOMERID'=>'CUSTOMER ID',
+    'LBL_PRODID'=>'Product ID',
+    'LBL_AGENCY'=>'AGENCY',
+    'LBL_SELECTSTATUS'=>'SELECT STATUS',
+    'LBL_ResentOutstock'=>'Resend Outstock',
+    'LBL_Remove'=>'Remove',
+    'LBL_Resent'=>'Resend',
+    'LBL_COMMIT'=>'Commit',
+    'LBL_SOIDKW'=>'Orderid KW',
+    'LBL_CUSTOMERNAME'=>'NAME',
+    'LBL_PRODUCTNAME'=>'Products',
+    'LBL_AMOUNT'=>'Total Prices ',
+    'LBL_SOURCE'=>'SOURCE',
+    'LBL_AGENT'=>'ASSIGNED',
+    'LBL_FULFILLMENT'=>'WAREHOUSE',
+    'LBL_CARRIER'=>'CARRIER',
+    'LBL_CHECKBOX'=>'<input class="check-all" type="checkbox"></th>',
+    'OPEN_FILTER' => 'OPEN FILTER',
+    'CLOSE_FILTER' => 'CLOSE FILTER',
+    'CLEAR_FILTER_TABLE' => 'CLEAR FILTER'
+);
+
+$jsLanguageStrings = array();

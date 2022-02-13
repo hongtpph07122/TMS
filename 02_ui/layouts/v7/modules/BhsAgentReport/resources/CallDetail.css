@@ -1,0 +1,14 @@
+.gray-cell{
+    background: #e8e8e8!important;
+    color: #222!important;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+tr:hover td.gray-cell{
+    background-color: #215ca0 !important;
+    color: #fff!important;
+}
+.btnExportExcel {
+    margin-right: 15px;
+    width: 100% !important; 
+}

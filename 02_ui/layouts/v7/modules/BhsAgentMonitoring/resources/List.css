@@ -1,0 +1,17 @@
+.headphone i  {
+    font-size: 20px;
+}
+
+.oncall, .drection {
+    color: green;
+}
+.available {
+    color: blue;
+}
+
+.offline {
+    color: red;
+}
+.textBold{
+    font-weight: bold;
+}

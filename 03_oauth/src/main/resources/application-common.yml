@@ -1,0 +1,51 @@
+# Port
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+# JDBC
+spring:
+  main:
+    banner-mode: log
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    generate-ddl: false
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        connection:
+          characterEncoding: utf-8
+          CharSet: utf-8
+          useUnicode: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 50Evea7ujN
+          jws-algorithm: RS256
+  # Mail
+  mail:
+    host: mail.tmssolutions.net
+    port: 25
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          starttls:
+            enable: true
+    username: system@tmssolutions.net
+    password: T5P@ssw0rd86
+    default-encoding: UTF-8

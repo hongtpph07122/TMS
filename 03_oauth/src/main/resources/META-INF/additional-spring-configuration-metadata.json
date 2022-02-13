@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "tms.invoke-mechanism-system-change-password.enable-deep-expire-password",
+      "type": "java.lang.Boolean",
+      "description": "Description for tms.invoke-mechanism-system-change-password.enable-deep-expire-password."
+    }
+  ]
+}

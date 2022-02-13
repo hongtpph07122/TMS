@@ -1,0 +1,54 @@
+{
+  "properties": [
+    {
+      "name": "tms.invoke-mechanism-system-change-password.enable",
+      "type": "java.lang.Boolean",
+      "description": "Description for tms.invoke-mechanism-system-change-password.enable."
+    },
+    {
+      "name": "tms.invoke-mechanism-system-change-password.cron.expression_1",
+      "type": "java.lang.String",
+      "description": "Description for tms.invoke-mechanism-system-change-password.cron.expression_1."
+    },
+    {
+      "name": "tms.invoke-mechanism-system-change-password.cron.expression_2",
+      "type": "java.lang.String",
+      "description": "Description for tms.invoke-mechanism-system-change-password.cron.expression_2."
+    },
+    {
+      "name": "tms.invoke-mechanism-system-change-password.no-days-expired",
+      "type": "java.lang.Integer",
+      "description": "Description for tms.invoke-mechanism-system-change-password.no-days-expired."
+    },
+    {
+      "name": "tms.invoke-mechanism-system-change-password.enable-deep-expire-password",
+      "type": "java.lang.Boolean",
+      "description": "Description for tms.invoke-mechanism-system-change-password.enable-deep-expire-password."
+    },
+    {
+      "name": "tms.geo.status",
+      "type": "java.lang.String",
+      "description": "Description for tms.geo.status."
+    },
+    {
+      "name": "tms.geo.name",
+      "type": "java.lang.String",
+      "description": "Description for tms.geo.name."
+    },
+    {
+      "name": "tms.geo.identify",
+      "type": "java.lang.Integer",
+      "description": "Description for tms.geo.identify."
+    },
+    {
+      "name": "tms.oauth2-server.revoke.allow-call-api",
+      "type": "java.lang.Boolean",
+      "description": "Description for tms.oauth2-server.revoke.allow-call-api."
+    },
+    {
+      "name": "tms.resource-server.resource-id",
+      "type": "java.lang.String",
+      "description": "Description for tms.resource-server.resource-id."
+    }
+  ]
+}

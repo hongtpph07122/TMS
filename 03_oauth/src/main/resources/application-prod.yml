@@ -1,0 +1,21 @@
+# PROD
+spring:
+  datasource:
+    url: jdbc:postgresql://xxxxxxxx:5432/tms?ApplicationName=TMS
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: never
+    username: "tms_admin"
+    password: "123456"
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+# Hibernate Log levels
+logging:
+  pattern:
+    console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(%logger{0}){blue} %clr(%m){faint}%n"
+    rolling-file-name: logs/prod-tms-oauth-%d{yyyy-MM-dd}.%i.log
+  file:
+    name: "logs/prod-tms-oauth.log"

@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_bhsstock</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsstock` (
+              `bhsstockid` int(19) NOT NULL,
+              `bhsstock_name` varchar(50) NOT NULL,
+              PRIMARY KEY  (`bhsstockid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_bhsstockcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsstock` (
+                  `bhsstockid` int(11) NOT NULL,
+                  PRIMARY KEY  (`bhsstockid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

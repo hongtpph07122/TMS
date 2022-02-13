@@ -1,0 +1,6 @@
+# Hibernate Log Level
+logging:
+  level:
+    org:
+      springframework: OFF
+    root: OFF

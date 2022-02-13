@@ -1,0 +1,186 @@
+.textColorGreen {
+    color: #35aa47;
+}
+
+.textColorOrage {
+    color: #e67000;
+}
+
+.textColorRed {
+    color: #f82100;
+}
+
+.fontBold {
+    font-weight: bold;
+}
+
+.borderColorGreen {
+    border-color: #35aa47;
+}
+
+.marginBottom5px {
+    margin-bottom: 5px;
+}
+
+.marginBottom15px {
+    margin-bottom: 15px;
+}
+
+.marginBottom20px {
+    margin-bottom: 20px;
+}
+
+.marginBottom25px {
+    margin-bottom: 25px;
+}
+
+/*form*/
+label.fontBold {
+    font-weight: bold;
+}
+
+/*button export*/
+.btnExportExcel a {
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: all .3s;
+}
+
+.btnExportExcel a i {
+    font-size: 30px;
+    display: block;
+}
+
+.btnExportExcel a:hover {
+    color: #35aa47;
+}
+
+/*//callback*/
+.button-action-right {
+    float: right;
+}
+
+#tblMailList0 th .input-group {
+    float: none;
+    min-width: 50px;
+}
+
+.btnExportExcel {
+    height: 36px !important;
+    line-height: 36px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.btnExportExcel:hover i {
+    color: #032e61 !important;
+}
+
+/*Table*/
+table.custom-dt {
+    border: none;
+}
+
+/*Other*/
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #E3E5E6;
+}
+
+.module-action-bar .module-breadcrumb-List .module-title {
+    font-family: Roboto, sans-serif;
+    letter-spacing: .25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.main-container .search-link .keyword-input::placeholder {
+    color: #919699 !important;
+}
+
+.main-container .search-link span, .search-link .keyword-input::placeholder {
+    color: #78909C !important;
+}
+
+.main-container .search-link .keyword-input {
+    margin: 0 5px;
+}
+
+.main-container .search-link {
+    height: 36px;
+    line-height: 36px;
+    border: none !important;
+}
+
+.module-action-content {
+    padding: 20px 0 !important;
+}
+
+.module-action-bar .module-breadcrumb {
+    padding-left: 20px !important;
+}
+
+.dataTables_scroll > .dataTables_scrollHead {
+    width: 100% !important;
+    background-color: #F5F6F8;
+    padding: 0 15px;
+}
+
+.dataTables_scroll > .dataTables_scrollHead .dataTables_scrollHeadInner {
+    width: 100% !important;
+}
+
+.dataTables_scroll > .dataTables_scrollHead .dataTables_scrollHeadInner table.custom-dt {
+    width: 100% !important;
+    box-shadow: none !important;
+    margin-top: 0 !important;
+}
+
+.dataTables_scroll > .dataTables_scrollHead .dataTables_scrollHeadInner table.custom-dt thead th {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.dataTables_scroll > .dataTables_scrollBody {
+    width: calc(100% - 30px) !important;
+    margin-left: 15px;
+}
+
+.dataTables_scroll > .dataTables_scrollBody table.custom-dt {
+    position: relative;
+    top: -2px;
+    box-shadow: none !important;
+    border-bottom: 1px solid #E3E5E6;
+    border-radius: 0;
+}
+
+.dataTables_scroll > .dataTables_scrollBody thead {
+    height: 0 !important;
+}
+
+.dataTables_scroll > .dataTables_scrollBody table.custom-dt tbody td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+div.dataTables_wrapper div.dataTables_length {
+    padding-left: 32px;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin-right: 20px;
+}
+
+.border1px {
+    border: none !important;
+}

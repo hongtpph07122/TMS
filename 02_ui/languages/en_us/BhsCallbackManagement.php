@@ -1,0 +1,35 @@
+<?php
+
+$languageStrings = array(
+    'BhsCallbackManagement' => 'Callback Management',
+    'LBL_BhsCallbackManagement' => 'Callback Management',
+    'SINGLE_BhsCallbackManagement' => 'Callback Management',
+    'LBL_BHSCALLBACKMANAGEMENT_DETAILS' => 'Callback Management details',
+    'LBL_WIDGET_LINE' => 'Line',
+    'LBL_WIDGET_WAITING' => 'Waiting',
+    'LBL_WIDGET_TALKING' => 'Talking',
+    'LBL_WIDGET_TOTAL_OFFERED' => 'Total offered Call',
+    'LBL_WIDGET_TOTAL_LOST' => 'Total lost Call',
+    'LBL_WIDGET_LOST_CALL' => 'Lost call Rate',
+    'LBL_ASSIGNED' => 'Assigned',
+    'LBL_UNASSIGNED' => 'Unassigned',
+    'LBL_REASSIGN' => 'Reassign',
+    'LBL_UNASSIGN' => 'Unassign',
+    'LBL_DELETE' => 'Delete',
+    'LBL_LEAD_ID' => 'Lead Id',
+    'LBL_CALLBACK_TIME' => 'Callback time',
+    'LBL_REQUEST_TIME' => 'Request time',
+    'LBL_NAME' => 'Customer name',
+    'LBL_PHONE' => 'Phone',
+    'LBL_CREATEDATE' => 'Create date',
+    'LBL_LEADID' => 'Lead Id',
+    'LBL_CALLBACKTIME' => 'Callback time',
+    'LBL_REQUESTTIME' => 'Request time',
+    'LBL_ASSIGNEDNAME' => 'Assigned Name',
+    'OPEN_FILTER' => 'OPEN FILTER',
+    'CLOSE_FILTER' => 'CLOSE FILTER',
+    'CLEAR_FILTER_TABLE' => 'CLEAR FILTER',
+    '' => '',
+);
+
+$jsLanguageStrings = array();

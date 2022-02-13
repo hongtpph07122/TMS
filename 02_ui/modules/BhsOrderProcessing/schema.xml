@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_bhsorderprocessing</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsorderprocessing` (
+              `bhsorderprocessingid` int(19) NOT NULL,
+              `bhsorderprocessing_name` varchar(50) NOT NULL,
+              PRIMARY KEY  (`bhsorderprocessingid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_bhsorderprocessingcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsorderprocessingcf` (
+                  `bhsorderprocessingid` int(11) NOT NULL,
+                  PRIMARY KEY  (`bhsorderprocessingid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,0 +1,148 @@
+.textColorGreen{
+    color:#35aa47;
+}
+.textColorOrage{
+    color:#e67000;
+}
+.textColorRed{
+    color:#f82100;
+}
+.textColorRedCapital{
+    color:#bd4f40;
+}
+
+.fontBold{
+    font-weight: bold;
+}
+
+.borderColorGreen{
+    border-color:#35aa47;
+}
+
+.marginBottom5px{
+    margin-bottom: 5px;
+}
+.marginBottom15px{
+    margin-bottom: 15px;
+}
+
+.marginBottom20px{
+    margin-bottom: 20px;
+}
+.marginBottom25px{
+    margin-bottom: 25px;
+}
+/*form*/
+label.fontBold{
+    font-weight: bold;
+}
+
+
+/*button export*/
+.btnExportExcel a{
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: all .3s;
+}
+.btnExportExcel a i{
+    font-size: 30px;
+    display: block;
+}
+.btnExportExcel a:hover{
+    color:#35aa47;
+}
+/*modal*/
+.modal-header{
+    background: #032e61 !important;
+    padding: 8px 15px !important;
+    color: #fff !important;
+}
+.modal-header h3{
+    font-size: 20px;
+}
+.modal-header .close{
+    margin-top:0px !important;
+}
+@media (min-width: 992px){
+    .modal-lg {
+        width: 1200px;
+    }
+}
+.modal-body{
+    background: #f0f3f5;
+    font-size: 14px;
+}
+.modal-body .row .nav>li>a{
+    font-size: 14px;
+    margin: 0;
+    letter-spacing: 0.4px;
+}
+.nav-tabs{
+    padding: 0 15px;
+    margin-top: -10px;
+}
+.nav-tabs>li{
+    margin: 0 15px;
+}
+.modal-body ul.border1px{
+    border: 1px solid #E3E5E6;
+}
+.modal-body ul.border1px li{
+    border-bottom: 1px solid #E3E5E6;
+    padding:8px 5px;
+    font-size: 14px;
+    clear: both;
+}
+.modal-body ul.border1px li.row-col{
+    padding:0;
+}
+.modal-body ul.border1px li .col-5{
+    width: 49%;
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 1px solid #E3E5E6;
+    padding:8px 5px;
+}
+.modal-body ul.border1px li  .col-3{
+    width: 33%;
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 1px solid #E3E5E6;
+    padding:8px 5px;
+}
+.modal-body ul.border1px li .col-5:last-child,
+.modal-body ul.border1px li .col-3:last-child{
+    border-right: 0px;
+}
+.modal-body ul.border1px li:last-child{
+    border-bottom: 0px;
+}
+.modal-body strong{
+    font-weight: bold;
+}
+.popup-title{
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+.modal-body .box{
+    background: #FFFFFF !important;
+    padding: 10px;
+    box-shadow: 0px 1px 2px rgba(8, 35, 48, 0.24), 0px 2px 6px rgba(8, 35, 48, 0.16);
+    border-radius: 6px;
+}
+
+.box-title{
+    border-bottom: 1px solid #E3E5E6;
+    margin-bottom: 15px;
+    padding: 5px;
+    display: inline;
+}
+.box-title .edit{
+    display:none;
+    float: right;
+    padding: 5px 15px;
+    border: 0px;
+    margin-top:-5px;
+    margin-bottom: 5px;
+}

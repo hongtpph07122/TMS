@@ -1,0 +1,5 @@
+test/
+user_privileges/
+api/guzzle-master/vendor/
+config.inc.php
+.idea/

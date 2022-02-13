@@ -1,0 +1,11 @@
+package com.oauthcentralization.app.tmsoauth2.repositories;
+
+import com.oauthcentralization.app.tmsoauth2.entities.UsersRoleEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UsersRoleRepository extends JpaRepository<UsersRoleEntity, Integer> {
+
+    boolean existsByRoleIdAndUserId(Integer roleId, Integer userId);
+}

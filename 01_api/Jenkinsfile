@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: "DeployPath" , defaultValue: "/srv/${env.JOB_NAME}"      , description: "...")
+        string(name: "Backup1Path", defaultValue: "/srv/${env.JOB_NAME}/z_bk1", description: "...")
+        string(name: "Backup2Path", defaultValue: "/srv/${env.JOB_NAME}/z_bk2", description: "...")
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                dir('pow') {
+                    sh "/bin/bash gradlew bootJar"
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing.."
+            }
+        }
+        stage('Backup') {
+            steps {
+                dir('pow') {
+                    // Delete all files in Backup2
+                    sh "rm -rf ${params.Backup2Path}/*.* || true"
+                    
+                    // Move all files in Backup1 to Backup2
+                    sh "mv ${params.Backup1Path}/*.jar        ${params.Backup2Path}/ || true"
+                    sh "mv ${params.Backup1Path}/*.yml        ${params.Backup2Path}/ || true"
+                    sh "mv ${params.Backup1Path}/*.xml        ${params.Backup2Path}/ || true"
+                    sh "mv ${params.Backup1Path}/*.properties ${params.Backup2Path}/ || true"
+                    sh "ls -al ${params.Backup2Path}"
+
+                    // Move all files in Current Deploy to Backup1
+                    sh "cp ${params.DeployPath}/*.jar        ${params.Backup1Path}/ || true"
+                    sh "cp ${params.DeployPath}/*.yml        ${params.Backup1Path}/ || true"
+                    sh "cp ${params.DeployPath}/*.xml        ${params.Backup1Path}/ || true"
+                    sh "cp ${params.DeployPath}/*.properties ${params.Backup1Path}/ || true"
+                    sh "ls -al ${params.Backup1Path}"
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                dir('pow') {
+                    sh "cp ./build/libs/*.jar ${params.DeployPath}/"
+                    sh "cd ${params.DeployPath}/; ls -al .; ./restart.sh"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_bhsmissedcalls</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsmissedcalls` (
+              `bhsmissedcallsid` int(19) NOT NULL,
+              `bhsmissedcalls_name` varchar(50) NOT NULL,
+              PRIMARY KEY  (`bhsmissedcallsid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_bhsmissedcallscf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsmissedcallscf` (
+                  `bhsmissedcallsid` int(11) NOT NULL,
+                  PRIMARY KEY  (`bhsmissedcallsid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

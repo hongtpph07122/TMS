@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_bhscallbackmanagement</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhscallbackmanagement` (
+              `bhscallbackmanagementid` int(19) NOT NULL,
+              `bhscallbackmanagement_name` varchar(50) NOT NULL,
+              PRIMARY KEY  (`bhscallbackmanagementid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_bhscallbackmanagementcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhscallbackmanagementcf` (
+                  `bhscallbackmanagementid` int(11) NOT NULL,
+                  PRIMARY KEY  (`bhscallbackmanagementid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_bhscampaignlist</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhscampaignlist` (
+              `bhscampaignlistid` int(19) NOT NULL,
+              `bhscampaignlist_name` varchar(50) NOT NULL,
+              PRIMARY KEY  (`bhscampaignlistid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_bhscampaignlistcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhscampaignlistcf` (
+                  `bhscampaignlistid` int(11) NOT NULL,
+                  PRIMARY KEY  (`bhscampaignlistid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

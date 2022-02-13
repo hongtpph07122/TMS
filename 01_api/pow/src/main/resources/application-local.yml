@@ -1,0 +1,815 @@
+server:
+  port: 8083
+spring:
+  rabbitmq:
+    host: 27.71.226.237
+    username: tms_app
+    password: P@ssw0rdTm5
+    port: 5672
+
+logging:
+  level:
+    com.zaxxer.hikari: debug
+    com.tms.utils.AppUtils: debug
+    org.hibernate.SQL: debug
+app:
+  datasource:
+    url: "jdbc:postgresql://27.71.226.237:9106/tms_thailand?ApplicationName=TMS"
+    username: "tms_admin"
+    password: "123456"
+    hikari-config:
+      pool-name: app-pool
+      maximum-pool-size: 30
+      minimum-idle: 5
+oauth:
+  check-token-url: "http://27.71.226.237:9105/oauth/check_token"
+ws:
+  default-uri: "http://10.9.120.34/TelPublish/WebService1.asmx"
+  timeout: 2000
+  make-phone:
+    end-point: "http://10.9.120.34/TelPublish/WebService1.asmx"
+    action: "http://tempuri.org/MakeCall"
+  release-call:
+    end-point: "http://10.9.120.34/TelPublish/WebService1.asmx"
+    action: "http://tempuri.org/ReleaseCall"
+  ext: "1204"
+pbx:
+  url: "http://27.71.226.237:8080/pbx-rest"
+  channelId: "SIP/1000-00006fe3"
+config:
+  queue-agent: agentcy_nre
+  run-rate: false
+  run-basket: false
+  run-close-lead: true
+  orgId-close: 4
+  basket-time: 60000
+  run-writelogdb: true
+  redis-server: 27.71.226.237
+  user-expiretime: 5
+  cdr-websocket: ws://27.71.226.237:8080/cdr-log
+  cdr-listen: false
+  agency-id-hold: ;18;19;22;23;29;
+  country: TH
+  ghn-order: false
+  caching-group-agent: true
+  email-reset-pass: "/Users/danguyen/Downloads/yahoo.html"
+  kafka:
+    consumer:
+      bootstrap-servers: dbzui-kafka:36667
+      group-id: tms_api
+      topic: pbx-events
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+inmemory:
+  datasource:
+    jdbcUrl: "jdbc:sqlite::memory:"
+    username: "sa"
+    password: "sa"
+    pool-name: memory-pool
+    maximum-pool-size: 30
+    minimum-idle: 5
+
+dbconfigs:
+  file-path: Data/bak
+  configs:
+    - func-name: "getactiveleadbystatus"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "getactiveleadbystatusandtime"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getactiveleadbytime"
+      q-mode: "mem"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getactiveleadcount"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getcallbackleadcount"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getleadcount"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getfreshleadbynumber"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getfreshleadcount"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_campaign"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_campaign_agent"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "getproduct"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_product_attribute"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getproductbyname"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getproductinstock"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getproductlist"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getprovince"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "getprovincelist"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "log_lead"
+      always-write-file: true
+    - func-name: "log_callback"
+      always-write-file: true
+    - func-name: "upd_callback"
+      always-write-file: true
+    - func-name: "del_cl_callback"
+      always-write-file: false
+    - func-name: "del_multiple_callback"
+      always-write-file: false
+    - func-name: "get_callback"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_callback_all"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_callback_v4"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_callback_v7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_callback_order_by_lead_status"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_activelead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "get_activelead_v3"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "get_activelead_v7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "get_callback_bytime"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "get_callback_bytime_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "get_callback_bytime_v7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "get_capaign_config"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "get_do"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: false
+    - func-name: "get_default_do"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_default_do_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_freshlead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_freshlead_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_freshlead_v3"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_inactivelead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_inactivelead_v3"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_inactivelead_v7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_lead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_lead_v3"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_lead_v4"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_lead_v5"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_lead_v7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_lead_v8"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_lead_agency"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_newest_lead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_newest_lead_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_newest_lead_v3"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_newest_lead_v4"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_newest_lead_v7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_user"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_user_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_user_namepass"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_priv_byuser"
+      q-mode: "db"
+      q-timeout: [5, 3]
+      q-fallback: true
+    - func-name: "get_product"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_product_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_product_instock"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_cl_basket"
+      always-write-file: true
+    - func-name: "ins_cl_basket_v2"
+      always-write-file: true
+    - func-name: "ins_cl_basket_v3"
+      always-write-file: true
+    - func-name: "ins_cl_basket_v4"
+      always-write-file: true
+    - func-name: "upd_basket"
+      always-write-file: true
+    - func-name: "upd_basket_v2"
+      always-write-file: true
+    - func-name: "ins_do"
+      always-write-file: true
+    - func-name: "ins_po"
+      always-write-file: true
+    - func-name: "ins_so"
+      always-write-file: true
+    - func-name: "ins_so_v2"
+      always-write-file: true
+    - func-name: "del_so_item"
+      always-write-file: false
+    - func-name: "ins_so_item"
+      always-write-file: true
+    - func-name: "ins_so_item_v2"
+      always-write-file: true
+    - func-name: "log_po"
+      always-write-file: true
+    - func-name: "log_so"
+      always-write-file: false
+    - func-name: "log_do"
+      always-write-file: false
+    - func-name: "log_agent_activity"
+      always-write-file: false
+    - func-name: "upd_do"
+      always-write-file: true
+    - func-name: "upd_so"
+      always-write-file: true
+    - func-name: "upd_so_v2"
+      always-write-file: false
+    - func-name: "upd_inactive_lead"
+      always-write-file: true
+    - func-name: "upd_lead"
+      always-write-file: true
+    - func-name: "upd_lead_v4"
+      always-write-file: true
+    - func-name: "upd_lead_v5"
+      always-write-file: true
+    - func-name: "upd_lead_byAssigned"
+      always-write-file: true
+    - func-name: "get_distribution_rule"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_distribution_rule_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_distri_rule_param"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_cp_distribution_rule"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_cp_distribution_rule_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_cp_distribution_rule_v7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_rule_param"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_group"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_call_strategy"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_cp_call_strategy"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_strategy_param"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_group_agent"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_group_agent_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_subdistrict"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_subdistrict_bypartner"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_province"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_province_bypartner"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_district"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_district_bypartner"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_blacklist"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_dnc"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_basket_lead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_basket_lead_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_basket_lead_v3"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_basket_lead_v4"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_campaign"
+      always-write-file: true
+    - func-name: "upd_campaign"
+      always-write-file: true
+    - func-name: "ins_cl_fresh"
+      always-write-file: true
+    - func-name: "ins_cl_fresh_v2"
+      always-write-file: true
+    - func-name: "ins_cl_fresh_v3"
+      always-write-file: true
+    - func-name: "ins_cl_fresh_v4"
+      always-write-file: true
+    - func-name: "ins_cl_fresh_v5"
+      always-write-file: true
+    - func-name: "ins_cl_active"
+      always-write-file: true
+    - func-name: "ins_cl_active_v2"
+      always-write-file: true
+    - func-name: "ins_cl_active_v3"
+      always-write-file: true
+    - func-name: "ins_cl_inactive"
+      always-write-file: true
+    - func-name: "ins_cl_inactive_v2"
+      always-write-file: true
+    - func-name: "ins_cl_inactive_v3"
+      always-write-file: true
+    - func-name: "ins_cl_trash"
+      always-write-file: true
+    - func-name: "ins_cl_trash_v2"
+      always-write-file: true
+    - func-name: "ins_cl_trash_v3"
+      always-write-file: true
+    - func-name: "ins_cl_callback"
+      always-write-file: true
+    - func-name: "ins_cl_callback_v4"
+      always-write-file: true
+    - func-name: "ins_cp_config"
+      always-write-file: true
+    - func-name: "upd_CP_config"
+      always-write-file: true
+    - func-name: "get_so"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_so_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_so_item"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_so_item_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "udp_so_item"
+      always-write-file: true
+    - func-name: "get_so_byProduct"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_province"
+      always-write-file: true
+    - func-name: "ins_subdistrict"
+      always-write-file: true
+    - func-name: "ins_district"
+      always-write-file: true
+    - func-name: "ins_province_map"
+      always-write-file: true
+    - func-name: "ins_district_map"
+      always-write-file: true
+    - func-name: "ins_subdistrict_map"
+      always-write-file: true
+    - func-name: "ins_product"
+      always-write-file: true
+    - func-name: "ins_product_v2"
+      always-write-file: false
+    - func-name: "ins_product_combo"
+      always-write-file: true
+    - func-name: "del_product_combo"
+      always-write-file: false
+    - func-name: "upd_product"
+      always-write-file: true
+    - func-name: "upd_product_v2"
+      always-write-file: false
+    - func-name: "ins_product_attribute"
+      always-write-file: true
+    - func-name: "upd_product_attribute"
+      always-write-file: true
+    - func-name: "get_calling_list"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_calling_list_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_cp_callinglist"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_cp_callinglist_v3"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_product_mapping"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_product_mapping_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_partner"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_unreachable_lead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_stock"
+      always-write-file: true
+    - func-name: "upd_stock"
+      always-write-file: true
+    - func-name: "upd_unreachable"
+      always-write-file: true
+    - func-name: "ins_cl_unreachable"
+      always-write-file: true
+    - func-name: "del_unreachable"
+      always-write-file: false
+    - func-name: "del_multiple_unreachable"
+      always-write-file: false
+    - func-name: "get_org_partner"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_organization_partner"
+      always-write-file: true
+    - func-name: "udp_org_partner"
+      always-write-file: true
+    - func-name: "get_organization"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_log_so"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_campaign_progress"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_validation"
+      q-mode: "db"
+      q-timeout: [10, 6]
+    - func-name: "get_validation_v2"
+      q-mode: "db"
+      q-timeout: [10, 6]
+    - func-name: "get_validation_v3"
+      q-mode: "db"
+      q-timeout: [10, 6]
+    - func-name: "get_validation_v4"
+      q-mode: "db"
+      q-timeout: [10, 6]
+    - func-name: "get_validation_v5"
+      q-mode: "db"
+      q-timeout: [10, 6]
+    - func-name: "get_order_management"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_order_management_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_order_management_v3"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_order_management_v4"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_order_management_v5"
+      q-mode: "db"
+      q-timeout: [60, 60]
+    - func-name: "get_order_management_v6"
+      q-mode: "db"
+      q-timeout: [10, 6]
+    - func-name: "del_all_fresh"
+      always-write-file: false
+    - func-name: "del_multiple_fresh"
+      always-write-file: false
+    - func-name: "get_stockby_province_product"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_warehouse"
+      always-write-file: true
+    - func-name: "del_warehouse"
+      always-write-file: false
+    - func-name: "upd_warehouse"
+      always-write-file: true
+    - func-name: "get_do_new"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_do_new_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_do_new_v7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_do_new"
+      always-write-file: true
+    - func-name: "ins_do_new_v2"
+      always-write-file: true
+    - func-name: "upd_do_new"
+      always-write-file: true
+    - func-name: "upd_do_new_v2"
+      always-write-file: true
+    - func-name: "upd_do_new_v3"
+      always-write-file: true
+    - func-name: "upd_do_new_v4"
+      always-write-file: true
+    - func-name: "upd_do_new_bytrackingCode"
+      always-write-file: true
+    - func-name: "get_so_fulfillment"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "upd_so_fulfillment"
+      always-write-file: true
+    - func-name: "ins_status_mapping"
+      always-write-file: true
+    - func-name: "get_status_mapping"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_tracking_code"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_do_postback"
+      always-write-file: true
+    - func-name: "get_multi_product"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_warehouse"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_province_map"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_subdistrict_map"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_district_map"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "del_province_map"
+      always-write-file: false
+    - func-name: "del_district_map"
+      always-write-file: false
+    - func-name: "del_subdistrict_map"
+      always-write-file: false
+    - func-name: "ins_product_mapping"
+      always-write-file: true
+    - func-name: "del_product_mapping"
+      always-write-file: false
+    - func-name: "get_cdr"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_cdr_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_cdr"
+      always-write-file: true
+    - func-name: "ins_cdr_v2"
+      always-write-file: true
+    - func-name: "upd_cdr"
+      always-write-file: true
+    - func-name: "del_cdr"
+      always-write-file: false
+    - func-name: "del_do_new"
+      always-write-file: false
+    - func-name: "get_order_dhl"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "upd_callback_byassigned"
+      always-write-file: true
+    - func-name: "ins_pickup"
+      always-write-file: true
+    - func-name: "upd_pickup"
+      always-write-file: true
+    - func-name: "del_pickup"
+      always-write-file: true
+    - func-name: "get_pickup"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_log_do"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_uncall_lead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_uncall_lead_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_global_parameter"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_global_parameter_v2"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "dashboard_agent_performance"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "dashboard_avggroup_performance"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_offer"
+      q-mode: "db"
+      q-timeout: [5, 4]
+    - func-name: "get_synonym"
+      q-mode: "db"
+      q-timeout: [5, 4]
+    - func-name: "ins_offer"
+      always-write-file: true
+    - func-name: "get_sale_order"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_agent_rate"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_agent_rate"
+      always-write-file: true
+    - func-name: "get_log_lead"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_log_agent_activity"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "upd_lead_reassign"
+      always-write-file: true
+    - func-name: "get_cp_callinglist_agskill"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_cp_callinglist_agskill_V7"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_cdr_all"
+      always-write-file: true
+    - func-name: "ins_group_agent"
+      always-write-file: true
+    - func-name: "del_group_agent"
+      always-write-file: false
+    - func-name: "upd_group_agent"
+      always-write-file: false
+    - func-name: "get_shipping_exportCSV"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "log_integrate_partner"
+      always-write-file: true
+    - func-name: "get_postalcode"
+      q-mode: "db"
+      q-timeout: [5, 4]
+    - func-name: "get_do_fulfillment"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "ins_rc_lastmile_status"
+      always-write-file: true
+    - func-name: "ins_mkt_data"
+      always-write-file: false
+    - func-name: "get_product_combo"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_mkt_metadata"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_uncall_lead_LIFO_02"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_or_department"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "udp_or_department"
+      always-write-file: false
+    - func-name: "ins_or_department"
+      always-write-file: false
+    - func-name: "ins_lc_neighborhood"
+      always-write-file: false
+    - func-name: "ins_lc_postal_code"
+      always-write-file: false
+    - func-name: "del_lc_neighborhood_map"
+      always-write-file: false
+    - func-name: "get_shipping"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_neighborhood"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_location_full"
+      q-mode: "db"
+      q-timeout: [5, 3]
+    - func-name: "get_postal_code"
+      q-mode: "db"
+      q-timeout: [5, 3]

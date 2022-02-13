@@ -1,0 +1,67 @@
+.textColorGreen{
+    color:#35aa47;
+}
+.textColorOrage{
+    color:#e67000;
+}
+.textColorRed{
+    color:#f82100;
+}
+
+.fontBold{
+    font-weight: bold;
+}
+
+.borderColorGreen{
+    border-color:#35aa47;
+}
+
+.marginBottom5px{
+    margin-bottom: 5px;
+}
+.marginBottom15px{
+    margin-bottom: 15px;
+}
+
+.marginBottom20px{
+    margin-bottom: 20px;
+}
+.marginBottom25px{
+    margin-bottom: 25px;
+}
+/*form*/
+label.fontBold{
+    font-weight: bold;
+}
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+.progress,.progress-bar {
+    height: 10px;
+    border-radius: 25px;
+    margin: 0;
+}
+.btn-group.btn-group-action.open{
+    position: absolute !important;
+   
+}
+.dropdown-menu {
+    position: absolute !important;
+}
+
+.bg-black{
+    background-color: black !important;
+}
+
+a.btnBhsAction.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #d1d6da;
+}
+.btn-group-action a.disabled i{
+    color: #d1d6da;
+}

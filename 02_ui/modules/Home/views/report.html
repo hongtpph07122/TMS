@@ -1,0 +1,461 @@
+<html>
+<head>
+  <style>
+  table, th, td {
+    border: 1px solid;
+    border-color: silver;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 0.5em;
+    text-align: left;
+  }
+  tr.cyanline {
+    background-color: #A9F5F1;
+    font-weight: bold;
+  }
+  td.boldcell {
+    font-weight: bold;
+  }
+  th.olui {
+    padding-left: 3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+  }
+  .group-choose{
+	font-size: 20px;
+  }
+  </style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+</head>
+<body>
+	<div>
+	<div align="center" class="group-choose">
+		Choose group <select id="chooseGroup">
+						<option>Choose Group</option>
+					</select>
+	</div>
+  <table style="width:100%" class="uptable">
+    <tr>
+      <th>Users online</th>
+      <td class="boldcell" id="usronline" colspan=6>0</td>
+    </tr>
+    <tr class="cyanline">
+      <th>Total orders</th>
+      <td id="totalorder">0</td>
+      <td></td>
+      <td></td>
+      <th>Total calls</th>
+      <td id="totalcall">0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Approved</th>
+      <td id="orderapproved">0</td>
+      <td id="orderrate">0%</td>
+      <td></td>
+      <th>Approved</th>
+      <td id="callapproved">0</td>
+      <td id="callrate">0%</td>
+    </tr>
+    <tr>
+      <th class="olui">Delivered</th>
+      <td id="DO">0</td>
+      <td id="DOrate">0%</td>
+      <td></td>
+      <th class="olui">Delivered</th>
+      <td id="callDO">0</td>
+      <td id="callDoRate">0%</td>
+    </tr>
+    <tr>
+      <th class="olui">Intrasit</th>
+      <td id="inOrder">0</td>
+      <td id="inOrderRate">0%</td>
+      <td></td>
+      <th class="olui">Intrasit</th>
+      <td id="inCall">0</td>
+      <td id="inCallRate">0%</td>
+    </tr>
+    <tr>
+      <th class="olui">Returned</th>
+      <td id="reOrder">0</td>
+      <td id="reOrderRate">0%</td>
+      <td></td>
+      <th class="olui">Returned</th>
+      <td id="reCall">0</td>
+      <td id="reCallRate">0%</td>
+    </tr>
+    <tr>
+      <th class="olui">Delay</th>
+      <td id="delayOrder">0</td>
+      <td id="delayOrderRate">0%</td>
+      <td></td>
+      <th class="olui">Delay</th>
+      <td id="delayCall">0</td>
+      <td id="delayCallRate">0%</td>
+    </tr>
+    <tr>
+      <th>Unsanswered call</th>
+      <td id="unsOrder">0</td>
+      <td id="unsOrderRate"></td>
+      <td></td>
+      <th>Unsanswered call</th>
+      <td id="unsCall">0</td>
+      <td id="unsCallRate">0%</td>
+    </tr>
+    <tr>
+      <th class="olui">1-2 times</th>
+      <td id="uns12">0</td>
+      <td id="uns12Rate">0%</td>
+      <td></td>
+      <th></th>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="olui">3-5 times</th>
+      <td id="uns35">0</td>
+      <td id="uns35Rate">0%</td>
+      <td></td>
+      <th></th>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="olui">6-10 times</th>
+      <td id="uns610">0</td>
+      <td id="uns610Rate">0%</td>
+      <td></td>
+      <th></th>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="olui">>10 times</th>
+      <td id="uns10">0</td>
+      <td id="uns10Rate">0%</td>
+      <td></td>
+      <th></th>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Recall</th>
+      <td id="recallOrder">0</td>
+      <td id="recallOrderRate">0%</td>
+      <td></td>
+      <th>Recall</th>
+      <td id="rec">0</td>
+      <td id="recRate">0%</td>
+    </tr>
+    <tr>
+      <th>Rejected</th>
+      <td id="rejectOrder">0</td>
+      <td id="rejectOrderRate">0%</td>
+      <td></td>
+      <th>Rejected</th>
+      <td id="rjCall">0</td>
+      <td id="rjCallRate">0%</td>
+    </tr>
+    <tr>
+      <th>Trash</th>
+      <td id="trash">0</td>
+      <td id="trashRate">0%</td>
+      <td></td>
+      <th>Trash</th>
+      <td id="trashCall">0</td>
+      <td id="trashCallRate">0%</td>
+    </tr>
+    <tr>
+      <th>New orders</th>
+      <td id="newOrder">0</td>
+      <td id="newOrderRate">0%</td>
+      <td></td>
+      <th></th>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="cyanline">
+      <th>Intermediate check</th>
+      <td colspan="6" id="total">0 VND</td>
+    </tr>
+  </table>
+  <br/>
+  <!--<table class="bangduoi" id="bangduoi" style="width:100%">
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Orders</th>
+      <th>Approved</th>
+      <th>%</th>
+      <th>Products</th>
+      <th>In total(VND)</th>
+      <th>Rejected</th>
+      <th>%</th>
+      <th>Bill</th>
+      <th>Delivered</th>
+      <th>%</th>
+      <th>Intransit</th>
+      <th>%</th>
+      <th>Reject</th>
+      <th>%</th>
+    </tr>
+	</thead>
+	<tbody>
+    <tr>
+      <td>145</td>
+      <td>29</td>
+      <td>7</td>
+      <td>24.14%</td>
+      <td>17</td>
+      <td>9,850,001</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>1,408,572 VND</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>7</td>
+      <td>24.14%</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+	</tbody>
+  <table>
+  -->
+ <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+			  <th>Operator</th>
+			  <th>Orders</th>
+			  <th>Approved</th>
+			  <th>%</th>
+			  <th>Products</th>
+			  <th>In total(VND)</th>
+			  <th>Rejected</th>
+			  <th>%</th>
+			  <th>Bill</th>
+			  <th>Delivered</th>
+			  <th>%</th>
+			  <th>Intransit</th>
+			  <th>%</th>
+			  <th>Reject</th>
+			  <th>%</th>             
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+            </tr>
+        </tfoot>
+    </table>
+  
+ 
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+	   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+	   <script type="text/javascript">
+	   var tblDetail;
+	   var base_url = "http://183.91.11.164:9090";
+	   function tofixed(number){
+			return parseFloat(Math.round(number * 10000)/100) + "%";
+	   }
+	   
+	   function setDataSumary(result){
+	   var totalorder = 0, totalcall = 0, orderapproved = 0, orderrate = 0, callrate = 0, totalcall = 0, delivered = 0, deliveredrate = 0, inOrder = 0, inOrderRate = 0, inCall = 0, inCallRate = 0, reOrder = 0, reOrderRate = 0, delayOrder = 0, delayOrderRate = 0, unsOrder = 0, unsOrderRate = 0, uns12 = 0, uns12Rate = 0, uns35 = 0, uns35Rate = 0, uns610 = 0, uns610Rate = 0, more10 = 0, more10Rate = 0, recallOrder = 0, recallOrderRate = 0, rejectOrder = 0, rejectOrderRate = 0, trash = 0, trashRate = 0,trashCall =0 , trashCall = 0, newOrder = 0, newOrderRate = 0, callApproved = 0, callApprovedRate = 0, callDO = 0, callDoRate = 0, callUncall = 0, callUncallRate = 0, callCallback = 0, callCallbackRate = 0, callReject = 0, callRejectRate = 0, callTrash = 0, callTrashRate = 0, totalSoAmount = 0, SO = 0;
+				for( i = 0; i < result.data.length; i++){
+					//console.log(i);
+					var obj = result.data[i];
+					totalorder += obj.totalLead;
+					//totalcall += obj.
+					orderapproved += obj.approved;
+					totalcall += obj.totalCall;
+					delivered += obj.delivered;
+					inOrder += obj.intransit;
+					reOrder += obj.returned;
+					delayOrder += obj.delay;
+					unsOrder += obj.uncall;
+					uns12	+= obj.uncall12Times;
+					uns35 += obj.uncall35Times;
+					uns610 += obj.uncall610Times;
+					recallOrder += obj.callback;
+					rejectOrder += obj.rejected;
+					trash += obj.trash;
+					newOrder += obj.leadNew;
+					callApproved += obj.approved;
+					callUncall += obj.callUncall;
+					callCallback += obj.callCallback;
+					callReject += obj.callReject;
+					callTrash += obj.callTrash;
+					totalSoAmount += obj.totalSoAmount;
+					SO += obj.saleOrder;
+				}
+				
+				$("#totalorder").html(totalorder);
+				$("#totalcall").html(totalcall);
+				$("#orderapproved").html(orderapproved);
+				if(totalorder != 0){
+					orderrate = orderapproved/totalorder ;
+					recallOrderRate = recallOrder/totalorder ;
+					rejectOrderRate = rejectOrder/totalorder;
+					trashRate += trash/totalorder;
+					newOrderRate += newOrder/totalorder;
+				}
+				if(totalcall != 0){
+					callApprovedRate = callApproved/totalcall;
+					callUncallRate = callUncall/totalcall;
+					callCallbackRate = callCallback/totalcall;
+					callRejectRate = callReject / totalcall;
+					callTrashRate = callTrash /totalcall;
+				}
+				$("#orderrate").html(tofixed(orderrate));
+				
+				$("#callapproved").html(callApproved);
+				$("#callrate").html(tofixed(callApprovedRate));
+
+				$("#DO").html(delivered);
+				if(orderapproved != 0){
+					deliveredrate 	= delivered/orderapproved;
+					inOrderRate 	= inOrder/orderapproved;
+					reOrderRate 	= reOrder/orderapproved;
+					delayOrderRate 	= delayOrder/orderapproved;
+				}
+				if(unsOrder != 0){
+					uns12Rate 		= uns12 /unsOrder;
+					uns35Rate		= uns35 /unsOrder;
+					uns610Rate		= uns610/unsOrder;
+					more10Rate		= more10/unsOrder;
+				}
+					
+				$("#DOrate").html(tofixed(deliveredrate));
+				
+				$("#callDO").html(delivered);
+				$("#callDoRate").html(tofixed(deliveredrate));
+				
+				$("#inOrder").html(inOrder);
+				$("#inOrderRate").html(tofixed(inOrderRate));
+				
+				$("#inCall").html(inCall);
+				$("#inCallRate").html(tofixed(inCallRate));
+				
+				$("#reOrder").html(reOrder);
+				$("#reOrderRate").html(tofixed(reOrderRate));
+				
+				$("#recallRate").html(12);
+				$("#delayOrder").html(delayOrder);
+				$("#delayOrderRate").html(tofixed(delayOrderRate));
+				
+				$("#delayCall").html(delayOrder);
+				$("#delayCallRate").html(tofixed(delayOrderRate));
+				
+				$("#unsOrder").html(unsOrder);
+				//$("#unsOrderRate").html(12);
+				
+				$("#unsCall").html(callUncall);
+				$("#unsCallRate").html(tofixed(callUncallRate));
+				
+				$("#uns12").html(uns12);
+				$("#uns12Rate").html(tofixed(uns12Rate));
+				
+				$("#uns35").html(uns35);
+				$("#uns35Rate").html(tofixed(uns35Rate));
+				$("#uns610").html(uns610);
+				$("#uns610Rate").html(tofixed(uns610Rate));
+				$("#uns10").html(more10);
+				$("#uns10Rate").html(tofixed(more10Rate));
+				
+				$("#recallOrder").html(recallOrder);
+				$("#recallOrderRate").html(tofixed(recallOrderRate));
+				$("#reCall").html(reOrder);
+				$("#reCallRate").html(tofixed(reOrderRate));
+				$("#rec").html(callCallback);
+				$("#recRate").html(tofixed(callCallbackRate));
+				$("#rejectOrder").html(rejectOrder);
+				$("#rejectOrderRate").html(tofixed(rejectOrderRate));
+				$("#rjCall").html(callReject);
+				$("#rjCallRate").html(tofixed(callRejectRate));
+				$("#trash").html(trash);
+				$("#trashRate").html(tofixed(trashRate));
+				$("#trashCall").html(callTrash);
+				$("#trashCallRate").html(tofixed(callTrashRate));
+				$("#newOrder").html(newOrder);
+				$("#newOrderRate").html(tofixed(newOrderRate));
+				var checkTotal = 0;
+				if(SO != 0)
+					checkTotal = totalSoAmount/SO;
+				$("#total").html(checkTotal + " VND");
+	   }
+	   
+	   function fillData(groupId){
+			$.ajax({
+				url: base_url + "/report?groupId=" + groupId,
+				//contentType: "application/json",
+				dataType: 'json',
+				success: function(result){
+					setDataSumary(result);
+				}
+			});
+			tblDetail.ajax.url( base_url + "/report?groupId=" + groupId ).load();
+			  
+	   }
+
+	   $(document).ready( function () {
+	   $.ajax({
+			url: base_url + "/report/group",
+			//contentType: "application/json",
+			dataType: 'json',
+			success: function(data){
+				// Add options
+				for (var i in data) {
+					$("#chooseGroup").append('<option value=' + data[i].groupId + '>' + data[i].name + '</option>');
+				}
+			}
+		});
+		
+		$('#chooseGroup').on('change', function() {
+		  console.log( this.value );
+		  fillData(this.value);
+		});
+		tblDetail = $('#example').DataTable( {
+			"ajax": base_url + "/report?groupId=" + 0,
+			"columns": [
+		//operator
+            { "data": "agent" },
+			//order
+			{ "data": "totalLead" },
+			//approved
+			{ "data": "approved" },
+			//%
+			{ "data": function(data,type,row) { return (data["totalLead"] != 0 ? tofixed(data["approved"] / data["totalLead"]) : "0%")} },
+			//Products
+			{ "data": "totalProduct" },
+			//In total
+			{ "data": "totalSoAmount" },
+			//rejected
+			{ "data": "rejected" },
+			//%
+			{ "data": function(data,type,row) { return (data["totalLead"] != 0 ? tofixed(data["rejected"] / data["totalLead"]) : "0%")}  },
+			//Bill
+			{ "data": function(data,type,row) { return (data["saleOrder"] != 0 ? (data["totalSoAmount"] / data["saleOrder"]) : 0) }  },
+			//Delivered
+			{ "data": "delivered" },
+			//%
+			{ "data":  function(data,type,row) { return (data["deliveryOrder"] != 0 ? tofixed(data["delivered"] / data["deliveryOrder"]) : "0%") }  } ,
+			//Intransit
+			{ "data": "intransit" },
+			//%
+			{ "data": function(data,type,row) { return (data["deliveryOrder"] != 0 ? tofixed(data["intransit"] / data["deliveryOrder"]) : "0%") } },
+			//Reject
+			{ "data": "deliveryFail" },
+			//%
+			{ "data": function(data,type,row) { return (data["deliveryOrder"] != 0 ? tofixed(data["deliveryFail"] / data["deliveryOrder"]) : "0%") } },
+            
+        ]
+    } );
+		   
+ 
+} );
+
+	    
+	   </script>
+	   </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Hibernate Log Level
+logging:
+  level:
+    root: INFO
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE
+      springframework:
+        web: DEBUG
+  file:
+    max-size: 2MB # Max log file size
+    total-size-cap: 10MB # Total size of log files
+    max-history: 30 # Log files max history
+    clean-history-on-start: false # Clean history on start
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%"

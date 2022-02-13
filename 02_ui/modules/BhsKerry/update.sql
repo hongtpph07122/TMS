@@ -1,0 +1,3 @@
+INSERT INTO `telesales_vtigercrm`.`vtiger_tab`(`tabid`, `name`, `presence`, `tabsequence`, `tablabel`, `modifiedby`, `modifiedtime`, `customized`, `ownedby`, `isentitytype`, `trial`, `version`, `parent`, `source`, `issyncable`, `allowduplicates`, `sync_action_for_duplicates`) VALUES (77, 'BhsKerry', 0, -1, 'Kerry', NULL, NULL, 1, 0, 1, 0, '1.0', '', 'custom', 0, 1, 1);
+INSERT INTO `telesales_vtigercrm`.`vtiger_app2tab`(`tabid`, `appname`, `sequence`, `visible`) VALUES (77, 'BHS_ORDERS', 5, 1);
+INSERT INTO `telesales_vtigercrm`.`vtiger_ws_entity`(`id`, `name`, `handler_path`, `handler_class`, `ismodule`) VALUES (64, 'BhsKerry', 'include/Webservices/VtigerModuleOperation.php', 'VtigerModuleOperation', 1);

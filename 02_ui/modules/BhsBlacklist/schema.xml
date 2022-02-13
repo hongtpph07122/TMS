@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_bhsblacklist</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsblacklist` (
+              `bhsblacklistid` int(19) NOT NULL,
+              `bhsblacklist_name` varchar(50) NOT NULL,
+              PRIMARY KEY  (`bhsblacklistid`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_bhsblacklistcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_bhsblacklistcf` (
+                  `bhsblacklistid` int(11) NOT NULL,
+                  PRIMARY KEY  (`bhsblacklistid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

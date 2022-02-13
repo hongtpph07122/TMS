@@ -1,0 +1,45 @@
+package com.oauthcentralization.app.tmsoauth2.variables;
+
+public class ColumnsVariable {
+    public static final String ROLE_ID = "ROLE_ID";
+    public static final String NAME = "NAME";
+    public static final String LABEL = "LABEL";
+    public static final String DESCRIPTION = "DSCR";
+    public static final String MODIFY_BY = "MODIFYBY";
+    public static final String MODIFY_DATE = "MODIFYDATE";
+    public static final String USER_ID = "USER_ID";
+    public static final String ORG_ID = "ORG_ID";
+    public static final String USER_TYPE = "USER_TYPE";
+    public static final String USER_NAME = "USER_NAME";
+    public static final String PASSWORD = "PASSWORD";
+    public static final String USER_LOCK = "USER_LOCK";
+    public static final String FULL_NAME = "FULLNAME";
+    public static final String EMAIL = "EMAIL";
+    public static final String PHONE = "PHONE";
+    public static final String BIRTHDAY = "BIRTHDAY";
+    public static final String HOME_PHONE_1 = "HOME_PHONE_1";
+    public static final String HOME_PHONE_2 = "HOME_PHONE_2";
+    public static final String PERSONAL_PHONE_1 = "PERSONAL_PHONE_1";
+    public static final String PERSONAL_PHONE_2 = "PERSONAL_PHONE_2";
+    public static final String WORK_MAIL = "WORK_MAIL";
+    public static final String PERSONAL_MAIL = "PERSONAL_MAIL";
+    public static final String HOME_ADDRESS = "HOME_ADDRESS";
+    public static final String FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD";
+    public static final String FAILED_LOGIN_COUNT = "FAILED_LOGIN_COUNT";
+    public static final String PASSWORD_UPDATE_TIME = "PASSWORD_UPDATE_TIME";
+    public static final String IS_EXPIRED = "IS_EXPIRED";
+    public static final String GROUP_ID = "GROUP_ID";
+    public static final String SHORT_NAME = "SHORT_NAME";
+    public static final String GROUP_TYPE = "GROUP_TYPE";
+    public static final String SKILL_ID = "SKILL_ID";
+    public static final String ID = "ID";
+    public static final String ENABLE = "ENABLE";
+    public static final String ENABLED = "ENABLED";
+    public static final String MANAGER_ID = "MANAGER_ID";
+    public static final String TEAM_TYPE = "TEAM_TYPE";
+    public static final String GROUP_ASSIGNEE_ID = "GR_AG_ID";
+    public static final String AGENT_ID = "AGENT_ID";
+    public static final String AGENT_SKILL_LEVEL = "AG_SKILL_LEVEL";
+    public static final String TEAM_ID = "TEAM_ID";
+    public static final String USER_ROLE_ID = "UR_ID";
+}
